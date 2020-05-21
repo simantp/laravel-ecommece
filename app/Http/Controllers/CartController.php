@@ -12,22 +12,22 @@ class CartController extends Controller
     public function add(Product $product)
     {
         // add the product to cart
+        
         \Cart::session(auth()->id())->add(array(
             'id' => $product->id,
             'name' => $product->name,
             'price' => $product->price,
             'quantity' => 1,
-            'product_img' => $product->product_img,
             'attributes' => array(),
             'associatedModel' => $product
         ));
+
         return redirect()->route('cart.index')->with('success_message', 'Item was added to your cart!');
 
     }
 
     public function index()
     {
-
         $cartItems = \Cart::session(auth()->id())->getContent();
 
         return view('cart.index', compact('cartItems'));

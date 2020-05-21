@@ -43,7 +43,6 @@ class ProductController extends Controller
 
     public function single($id)
     {
-
         $product = Product::where('id', $id)->firstOrFail();
 
         return view('products.product-detail')->with('product', $product);

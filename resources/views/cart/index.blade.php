@@ -67,7 +67,7 @@
                     <tr>
                       <td>
                         <div class="product-title"> 
-                          <a href="product-page.html">{{ $item -> name }}</a> 
+                          <a href="{{ route('product.single', $item->model->id) }}">{{ $item -> name }}</a> 
                         </div>
                       </td>
                       <td>
@@ -103,22 +103,7 @@
           </div>
         </div>
       </div>
-      <div class="mb-30">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="mt-30"> 
-              <a href="shop.html" class="btn btn-color">
-                <span><i class="fa fa-angle-left"></i></span>
-              </a> 
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="mt-30 right-side float-none-xs"> 
-              <a class="btn btn-color">Update Cart</a> 
-            </div>
-          </div>
-        </div>
-      </div>
+      
       <hr>
       <div class="mtb-30">
         <div class="row">
@@ -143,7 +128,7 @@
                         </div>
                       </td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
 
                       @foreach(Cart::getConditions() as $condition)
 
@@ -156,7 +141,7 @@
 
                       @endforeach
                       
-                    </tr>
+                    </tr> --}}
                     <tr>
                       <td>Shipping
                         <div class="form-check">
